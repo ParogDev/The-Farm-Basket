@@ -345,7 +345,7 @@ section {
 
 /* Benefits Section */
 .benefits {
-    background: var(--light-green);
+    background: var(--white);
 }
 
 .benefits-grid {
@@ -379,7 +379,7 @@ section {
 
 /* How It Works */
 .how-it-works {
-    background: var(--white);
+    background: var(--light-green);
 }
 
 .steps-container {
