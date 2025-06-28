@@ -343,6 +343,160 @@ section {
     margin-bottom: 1.5rem;
 }
 
+/* Box Selection Styles */
+.box-selection {
+    padding: 4rem 0;
+}
+
+.box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    justify-items: center;
+    margin-top: 2rem;
+}
+
+.box-option {
+    background: var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 380px;
+    width: 100%;
+}
+
+.box-option:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.box-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.box-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent-orange);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.box-content {
+    padding: 1.5rem;
+}
+
+.box-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.box-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.box-details {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.box-includes {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.box-includes li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.box-includes li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.box-select-btn {
+    width: 100%;
+}
+
+/* Subscription Info Styles */
+.subscription-info {
+    background: var(--warm-beige);
+    padding: 4rem 0;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.info-item h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.info-item h3 i {
+    color: var(--primary-green);
+    font-size: 1.25rem;
+}
+
+/* CTA Section Styles */
+.cta-section {
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Benefits Section */
 .benefits {
     background: var(--white);
@@ -525,6 +679,11 @@ section {
     .products-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
+    
+    .box-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -577,6 +736,16 @@ section {
 
     .products-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .box-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .btn {

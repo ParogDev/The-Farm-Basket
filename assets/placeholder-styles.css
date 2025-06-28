@@ -1,0 +1,141 @@
+/* 
+ * Placeholder Styles for The Farm Basket
+ * Add these styles to handle missing images gracefully
+ */
+
+/* Generic image placeholder styling */
+img[src*="assets/"]:not([src$=".svg"]) {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    border: 2px dashed #d1d5db;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Placeholder text for missing images */
+img[src*="assets/"]:not([src$=".svg"])::before {
+    content: "📷 Image: " attr(alt);
+    color: #6b7280;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+}
+
+/* Logo placeholder */
+img[src*="logo.svg"] {
+    background: var(--primary-green, #16a34a);
+    color: white;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-weight: 600;
+    min-width: 120px;
+    min-height: 40px;
+}
+
+img[src*="logo.svg"]::before {
+    content: "🧺 The Farm Basket";
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Hero image placeholders */
+.hero-img,
+img[src*="hero"] {
+    min-height: 400px;
+    background: linear-gradient(135deg, #16a34a 0%, #22c55e 50%, #65a30d 100%);
+}
+
+.hero-img::before,
+img[src*="hero"]::before {
+    content: "🌾 " attr(alt) " - Hero Image";
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Product box image placeholders */
+img[src*="fresh-box"]::before { content: "🥬 Fresh Box - Leafy Greens & Vegetables"; }
+img[src*="protein-box"]::before { content: "🐟 Protein Box - Meats & Fish"; }
+img[src*="dairy-box"]::before { content: "🥛 Dairy Box - Milk & Cheese"; }
+img[src*="family-box"]::before { content: "👨‍👩‍👧‍👦 Family Box - Complete Variety"; }
+img[src*="pantry-box"]::before { content: "🍯 Pantry Box - Breads & Pantry Items"; }
+
+/* Team photo placeholders */
+.team-photo,
+img[src*="team/"] {
+    min-height: 300px;
+    min-width: 300px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 50%;
+}
+
+.team-photo::before,
+img[src*="team/"]::before {
+    content: "👤 " attr(alt);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Farm/story image placeholders */
+img[src*="farm"]::before { content: "🚜 " attr(alt) " - Farm Scene"; }
+img[src*="story"]::before { content: "📖 " attr(alt) " - Story Image"; }
+img[src*="local"]::before { content: "🏡 " attr(alt) " - Local Scene"; }
+img[src*="contact"]::before { content: "📞 " attr(alt) " - Contact Image"; }
+img[src*="map"]::before { content: "🗺️ " attr(alt) " - Service Area Map"; }
+
+/* Box option cards - special styling */
+.box-option img {
+    min-height: 250px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border: 1px solid #e2e8f0;
+}
+
+/* Product card images */
+.product-card img {
+    min-height: 200px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+/* Hover effects for placeholders */
+img[src*="assets/"]:hover::before {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Responsive placeholder text */
+@media (max-width: 768px) {
+    img[src*="assets/"]::before {
+        font-size: 12px;
+        padding: 0.5rem;
+    }
+    
+    .hero-img::before,
+    img[src*="hero"]::before {
+        font-size: 16px;
+    }
+}
+
+/* 
+ * Usage Instructions:
+ * 
+ * 1. Add this CSS file to your HTML head:
+ *    <link rel="stylesheet" href="assets/placeholder-styles.css">
+ * 
+ * 2. Or copy these styles into your main styles.css file
+ * 
+ * 3. Remove this file once you have real images
+ * 
+ * The placeholders will automatically show descriptive text
+ * and appropriate colors for different types of images.
+ */ 
