@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Boxes - The Farm Basket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/logo.svg" alt="The Farm Basket" class="logo">
+                <span class="logo-text">The Farm Basket</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link active">Subscription Boxes</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="team.html" class="nav-link">Our Team</a>
+                <a href="mission.html" class="nav-link">Mission & Values</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="products.html" class="nav-cta">Start Subscription</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Build Your Perfect Farm Basket</h1>
+                <p class="hero-subtitle">Customize your bi-weekly delivery with fresh, locally-sourced products tailored to your family's needs and preferences</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No long-term commitments</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Skip or pause anytime</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Free delivery over $35</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/box-builder-hero.jpg" alt="Customizable subscription boxes" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Box Selection -->
+    <section class="box-selection" id="box-selector">
+        <div class="container">
+            <h2 class="section-title">Choose Your Box Type</h2>
+            <p class="section-subtitle">Start by selecting the box that best fits your family's needs</p>
+            
+            <div class="box-grid">
+                <div class="box-option" data-box-type="fresh">
+                    <div class="box-image">
+                        <img src="assets/fresh-box.jpg" alt="Fresh Box" class="box-img">
+                        <div class="box-badge">Most Popular</div>
+                    </div>
+                    <div class="box-content">
+                        <h3 class="box-title">Fresh Box</h3>
+                        <p class="box-price">$35 <span class="currency">CAD</span></p>
+                        <p class="box-details">6 items • 4-5kg • Bi-weekly</p>
+                        <ul class="box-includes">
+                            <li>Leafy greens & herbs</li>
+                            <li>Root vegetables</li>
+                            <li>Seasonal fruits</li>
+                            <li>Fresh herbs</li>
+                        </ul>
+                        <button class="btn btn-outline box-select-btn">Select This Box</button>
+                    </div>
+                </div>
+
+                <div class="box-option" data-box-type="protein">
+                    <div class="box-image">
+                        <img src="assets/protein-box.jpg" alt="Protein Box" class="box-img">
+                    </div>
+                    <div class="box-content">
+                        <h3 class="box-title">Protein Box</h3>
+                        <p class="box-price">$55 <span class="currency">CAD</span></p>
+                        <p class="box-details">3-4 items • 3-4kg • Bi-weekly</p>
+                        <ul class="box-includes">
+                            <li>Grass-fed meats</li>
+                            <li>Fresh Atlantic fish</li>
+                            <li>Plant-based proteins</li>
+                            <li>Free-range poultry</li>
+                        </ul>
+                        <button class="btn btn-outline box-select-btn">Select This Box</button>
+                    </div>
+                </div>
+
+                <div class="box-option" data-box-type="dairy">
+                    <div class="box-image">
+                        <img src="assets/dairy-box.jpg" alt="Dairy Box" class="box-img">
+                    </div>
+                    <div class="box-content">
+                        <h3 class="box-title">Dairy Box</h3>
+                        <p class="box-price">$30 <span class="currency">CAD</span></p>
+                        <p class="box-details">3-4 items • 3-4kg • Bi-weekly</p>
+                        <ul class="box-includes">
+                            <li>Farm fresh milk</li>
+                            <li>Artisan cheeses</li>
+                            <li>Free-range eggs</li>
+                            <li>Yogurt & butter</li>
+                        </ul>
+                        <button class="btn btn-outline box-select-btn">Select This Box</button>
+                    </div>
+                </div>
+
+                <div class="box-option" data-box-type="family">
+                    <div class="box-image">
+                        <img src="assets/family-box.jpg" alt="Family Combo Box" class="box-img">
+                        <div class="box-badge">Best Value</div>
+                    </div>
+                    <div class="box-content">
+                        <h3 class="box-title">Family Combo Box</h3>
+                        <p class="box-price">$60 <span class="currency">CAD</span></p>
+                        <p class="box-details">10-12 items • 6-7kg • Bi-weekly</p>
+                        <ul class="box-includes">
+                            <li>Fresh produce</li>
+                            <li>Quality proteins</li>
+                            <li>Dairy essentials</li>
+                            <li>Pantry staples</li>
+                        </ul>
+                        <button class="btn btn-outline box-select-btn">Select This Box</button>
+                    </div>
+                </div>
+
+                <div class="box-option" data-box-type="pantry">
+                    <div class="box-image">
+                        <img src="assets/pantry-box.jpg" alt="Pantry Box" class="box-img">
+                    </div>
+                    <div class="box-content">
+                        <h3 class="box-title">Pantry Box</h3>
+                        <p class="box-price">$25 <span class="currency">CAD</span></p>
+                        <p class="box-details">3-4 items • 2-3kg • Bi-weekly</p>
+                        <ul class="box-includes">
+                            <li>Artisan breads</li>
+                            <li>Local honey & jams</li>
+                            <li>Grains & flour</li>
+                            <li>Specialty items</li>
+                        </ul>
+                        <button class="btn btn-outline box-select-btn">Select This Box</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Information -->
+    <section class="subscription-info">
+        <div class="container">
+            <h2 class="section-title">Subscription Details</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3><i class="fas fa-calendar-alt"></i> Bi-weekly Delivery</h3>
+                    <p>Receive your fresh box every two weeks on your preferred day. Perfect frequency to ensure freshness without overwhelming your fridge.</p>
+                </div>
+                <div class="info-item">
+                    <h3><i class="fas fa-hand-paper"></i> No Commitments</h3>
+                    <p>Start, pause, or cancel your subscription anytime. We believe in flexibility that works with your lifestyle.</p>
+                </div>
+                <div class="info-item">
+                    <h3><i class="fas fa-cogs"></i> Easy Management</h3>
+                    <p>Manage your preferences, delivery dates, and account through our user-friendly customer portal.</p>
+                </div>
+                <div class="info-item">
+                    <h3><i class="fas fa-dollar-sign"></i> Transparent Pricing</h3>
+                    <p>Average spend is $40 bi-weekly ($80/month). No hidden fees, just fresh food delivered to your door.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Box Building Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Our Box Building Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Select Your Box</h3>
+                        <p>Choose from our 5 curated box types based on your household's primary needs</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Set Preferences</h3>
+                        <p>Tell us about dietary restrictions, allergies, and foods you love or want to avoid</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>We Customize</h3>
+                        <p>Our team selects the freshest local products that match your preferences</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Receive & Enjoy</h3>
+                        <p>Get your personalized box with recipes, farm stories, and preparation tips</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Farm-Fresh Journey?</h2>
+                <p>Join hundreds of Atlantic Canadian families already enjoying locally-sourced, farm-fresh food delivered to their door.</p>
+                <a href="#box-selector" class="btn btn-primary btn-large">Choose Your Box Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/logo.svg" alt="The Farm Basket" class="logo">
+                        <span class="logo-text">The Farm Basket</span>
+                    </div>
+                    <p class="footer-description">Connecting Atlantic Canadian families with fresh, locally-sourced food while supporting our farming communities.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Subscription Boxes</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="mission.html">Mission & Values</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html#faq">FAQ</a></li>
+                        <li><a href="#">Delivery Info</a></li>
+                        <li><a href="#">Manage Subscription</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> hello@thefarmbasket.ca</p>
+                        <p><i class="fas fa-phone"></i> 1-800-FARM-BOX</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri 8AM-6PM AT</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Serving Moncton, Fredericton & Saint John</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Farm Basket. All rights reserved. Supporting Atlantic Canada's local food systems.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
