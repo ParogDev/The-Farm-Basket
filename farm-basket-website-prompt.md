@@ -100,7 +100,7 @@ Address common questions about delivery, customization, sourcing, cancellation, 
 **Leadership Team:**
 
 **Xuerong Zhao** - *Co-Founder & Operations Director*
-"Passionate about sustainable food systems and supply chain optimization. Background in small-scale farming operations and logistics coordination."
+"Passionate about sustainable food systems and supply chain optimization."
 
 **Zakariya Mohammed** - *Co-Founder & Strategy Director*  
 "Focused on competitive positioning and strategic growth. Expertise in market analysis and business development in Atlantic Canada."
