@@ -275,7 +275,7 @@
                                     <li>cheese (~250g)</li>
                                 </ul>
                             </div>
-                            <button class="mt-auto w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
+                            <button class="mt-auto w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center" onclick="openBoxModal('freshDairy')">
                                 Choose Box
                             </button>
                         </div>
@@ -295,7 +295,7 @@
                                     <li>1 plant-based protein (e.g., tofu, legumes)</li>
                                 </ul>
                             </div>
-                            <button class="mt-auto w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
+                            <button class="mt-auto w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center" onclick="openBoxModal('protein')">
                                 Choose Box
                             </button>
                         </div>
@@ -316,7 +316,7 @@
                                     <li>1 pantry item (e.g., flour, grains, honey)</li>
                                 </ul>
                             </div>
-                            <button class="mt-auto w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
+                            <button class="mt-auto w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center" onclick="openBoxModal('familyCombo')">
                                 Choose Box
                             </button>
                         </div>
@@ -324,6 +324,148 @@
                 </div>
             </div>
         </section>
+
+        <!-- Box Preference Modals -->
+        <div id="modal-freshDairy" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+            <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
+                <button onclick="closeBoxModal('freshDairy')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+                <h2 class="text-2xl font-bold mb-4 flex items-center"><span class="mr-2">🥬</span> Fresh & Dairy Box Preferences</h2>
+                <form class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold mb-2">1. Produce Preferences</h3>
+                        <div class="space-y-1 ml-2">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Prefer more leafy greens</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Prefer more root vegetables</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Prefer more fruits</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Avoid: <input type="text" class="ml-2 border rounded px-2 py-1 w-40" placeholder="(list items)"></label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">2. Dairy Preferences</h3>
+                        <div class="space-y-1 ml-2">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Include milk</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Include cheese</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Include yogurt</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Lactose-free alternatives</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Avoid all dairy</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">3. Allergies or Dietary Needs</h3>
+                        <div class="space-y-1 ml-2">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Dairy</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Eggs</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Gluten</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Other: <input type="text" class="ml-2 border rounded px-2 py-1 w-40" placeholder="(specify)"></label>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="button" onclick="closeBoxModal('freshDairy')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded mr-2">Cancel</button>
+                        <button type="submit" class="bg-farm-green text-white px-4 py-2 rounded hover:bg-farm-light-green">Save Preferences</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="modal-protein" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+            <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
+                <button onclick="closeBoxModal('protein')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+                <h2 class="text-2xl font-bold mb-4 flex items-center"><span class="mr-2">🥩</span> Protein Box Preferences</h2>
+                <form class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold mb-2">1. Meat Preferences <span class="text-xs text-gray-500">(Select at least 2)</span></h3>
+                        <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Chicken</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Beef</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Pork</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Lamb</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Turkey</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Fish</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Shellfish</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">2. Plant-Based Protein Options</h3>
+                        <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Tofu</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Tempeh</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Beans/Lentils</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">None</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">3. Avoid These Proteins</h3>
+                        <input type="text" class="border rounded px-2 py-1 w-full" placeholder="(list proteins to avoid)">
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">4. Cooking Style <span class="text-xs text-gray-500">(optional)</span></h3>
+                        <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Pre-marinated</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Plain/raw cut</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Vacuum-sealed</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">No preference</label>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="button" onclick="closeBoxModal('protein')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded mr-2">Cancel</button>
+                        <button type="submit" class="bg-farm-green text-white px-4 py-2 rounded hover:bg-farm-light-green">Save Preferences</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="modal-familyCombo" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+            <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
+                <button onclick="closeBoxModal('familyCombo')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+                <h2 class="text-2xl font-bold mb-4 flex items-center"><span class="mr-2">👨‍👩‍👧‍👦</span> Family Combo Box Preferences</h2>
+                <form class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold mb-2">1. Household Size</h3>
+                        <div class="space-y-1 ml-2">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">1–2 people</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">3–4 people</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">5+</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">2. Preferred Produce Mix</h3>
+                        <div class="space-y-1 ml-2">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">More fruits</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">More vegetables</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Balanced mix</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Avoid: <input type="text" class="ml-2 border rounded px-2 py-1 w-40" placeholder="(list items)"></label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">3. Protein Preferences <span class="text-xs text-gray-500">(Choose 2)</span></h3>
+                        <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Chicken</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Beef</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Pork</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Lamb</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Turkey</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Fish</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Plant-based</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">4. Pantry Item Preferences</h3>
+                        <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Flour</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Grains</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Honey/Jam</label>
+                            <label class="flex items-center"><input type="checkbox" class="mr-2">Surprise me</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2">5. Any food allergies or restrictions?</h3>
+                        <input type="text" class="border rounded px-2 py-1 w-full" placeholder="(list allergies or restrictions)">
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="button" onclick="closeBoxModal('familyCombo')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded mr-2">Cancel</button>
+                        <button type="submit" class="bg-farm-green text-white px-4 py-2 rounded hover:bg-farm-light-green">Save Preferences</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <!-- Key Benefits -->
         <section id="benefits" class="bg-gray-50">
@@ -842,4 +984,27 @@
         </div>
     </footer>
 </body>
+<script>
+// Modal logic for box preferences
+function openBoxModal(box) {
+    closeAllBoxModals();
+    document.getElementById('modal-' + box).classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+}
+function closeBoxModal(box) {
+    document.getElementById('modal-' + box).classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+}
+function closeAllBoxModals() {
+    ['freshDairy', 'protein', 'familyCombo'].forEach(box => {
+        const modal = document.getElementById('modal-' + box);
+        if (modal) modal.classList.add('hidden');
+    });
+    document.body.classList.remove('overflow-hidden');
+}
+// Optional: Close modal on ESC
+window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeAllBoxModals();
+});
+</script>
 </html> 
