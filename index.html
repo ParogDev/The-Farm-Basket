@@ -187,13 +187,14 @@
             <!-- Top fade overlay (desktop only) -->
             <div class="pointer-events-none absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-white to-transparent z-40 hidden lg:block"></div>
             <!-- Text + Button Block -->
-            <div class="relative z-10 w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div class="relative z-10 w-full lg:w-2/5 flex flex-col items-center lg:items-start text-center lg:text-left lg:mr-12
+            ">
               <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Fresh from Farm to Your Door</h1>
               <p class="mt-4 text-xl text-gray-500">Supporting Local, Eating Better - Customizable subscription boxes with locally-sourced products delivered bi-weekly to your home in Atlantic Canada.</p>
               <a href="#products" class="mt-10 inline-block rounded-md border border-transparent bg-farm-green px-8 py-3 text-center font-medium text-white hover:bg-farm-light-green">Build Your Box</a>
             </div>
             <!-- Mosaic Grid Block: Desktop only, absolutely positioned, vertically centered -->
-            <div class="hidden lg:block absolute top-1/2 right-0 transform -translate-y-1/2 z-0">
+            <div class="hidden lg:block absolute top-1/2 right-0 transform -translate-y-1/2 z-0 mr-16">
               <div class="relative">
                 <!-- Top fade overlay -->
                 <div class="pointer-events-none absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-white to-transparent z-30"></div>
@@ -230,7 +231,44 @@
                 </div>
               </div>
             </div>
-            <!-- End Mosaic Grid Block -->
+            <!-- Mosaic Grid Block: Tablet/Mobile only -->
+            <div class="block lg:hidden w-full flex justify-center mt-12">
+              <div class="relative w-full max-w-[400px] max-h-[400px] mx-auto">
+                <!-- Top fade overlay -->
+                <div class="pointer-events-none absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-white to-transparent z-30"></div>
+                <!-- Bottom fade overlay -->
+                <div class="pointer-events-none absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-white to-transparent z-30"></div>
+                <div class="flex items-center space-x-6 overflow-hidden" style="height: 100%;">
+                  <div class="grid shrink-0 grid-cols-1 gap-y-6">
+                    <div class="h-40 w-28 overflow-hidden rounded-lg">
+                      <img src="images/mosaic/Display Fresh and dairy box1.png" alt="Fresh and Dairy Box" class="object-cover w-full h-full rounded-lg" />
+                    </div>
+                    <div class="h-40 w-28 overflow-hidden rounded-lg">
+                      <img src="images/mosaic/display4.png" alt="Vegetable Box" class="object-cover w-full h-full rounded-lg" />
+                    </div>
+                  </div>
+                  <div class="grid shrink-0 grid-cols-1 gap-y-6">
+                    <div class="h-40 w-28 overflow-hidden rounded-lg">
+                      <img src="images/mosaic/display 5.png" alt="Fruit Box" class="object-cover w-full h-full rounded-lg" />
+                    </div>
+                    <div class="h-40 w-28 overflow-hidden rounded-lg">
+                      <img src="images/mosaic/display 6.png" alt="Cheese Box" class="object-cover w-full h-full rounded-lg" />
+                    </div>
+                    <div class="h-40 w-28 overflow-hidden rounded-lg">
+                      <img src="images/mosaic/display 7.png" alt="Grape Box" class="object-cover w-full h-full rounded-lg" />
+                    </div>
+                  </div>
+                  <div class="grid shrink-0 grid-cols-1 gap-y-6">
+                    <div class="h-40 w-28 overflow-hidden rounded-lg">
+                      <img src="images/mosaic/Displa Meat box1.png" alt="Meat Box" class="object-cover w-full h-full rounded-lg" />
+                    </div>
+                    <div class="h-40 w-28 overflow-hidden rounded-lg">
+                      <img src="images/mosaic/Display Family box1.png" alt="Family Box" class="object-cover w-full h-full rounded-lg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Bottom fade overlay (desktop only) -->
             <div class="pointer-events-none absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent z-40 hidden lg:block"></div>
           </div>
