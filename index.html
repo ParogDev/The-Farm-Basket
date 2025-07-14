@@ -330,39 +330,40 @@
             <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
                 <button onclick="closeBoxModal('freshDairy')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
                 <h2 class="text-2xl font-bold mb-4 flex items-center"><span class="mr-2">🥬</span> Fresh & Dairy Box Preferences</h2>
-                <form class="space-y-6">
+                <form class="space-y-6" id="form-freshDairy" onsubmit="return validateFreshDairy(event)">
                     <div>
                         <h3 class="font-semibold mb-2">1. Produce Preferences</h3>
                         <div class="space-y-1 ml-2">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Prefer more leafy greens</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Prefer more root vegetables</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Prefer more fruits</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Avoid: <input type="text" class="ml-2 border rounded px-2 py-1 w-40" placeholder="(list items)"></label>
+                            <label class="flex items-center"><input type="checkbox" name="leafy" class="mr-2">Prefer more leafy greens</label>
+                            <label class="flex items-center"><input type="checkbox" name="root" class="mr-2">Prefer more root vegetables</label>
+                            <label class="flex items-center"><input type="checkbox" name="fruits" class="mr-2">Prefer more fruits</label>
+                            <label class="flex items-center"><input type="checkbox" name="avoidProduce" class="mr-2">Avoid: <input type="text" name="avoidProduceText" class="ml-2 border rounded px-2 py-1 w-40" placeholder="(list items)"></label>
                         </div>
                     </div>
                     <div>
                         <h3 class="font-semibold mb-2">2. Dairy Preferences</h3>
                         <div class="space-y-1 ml-2">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Include milk</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Include cheese</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Include yogurt</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Lactose-free alternatives</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Avoid all dairy</label>
+                            <label class="flex items-center"><input type="checkbox" name="milk" class="mr-2">Include milk</label>
+                            <label class="flex items-center"><input type="checkbox" name="cheese" class="mr-2">Include cheese</label>
+                            <label class="flex items-center"><input type="checkbox" name="yogurt" class="mr-2">Include yogurt</label>
+                            <label class="flex items-center"><input type="checkbox" name="lactoseFree" class="mr-2">Lactose-free alternatives</label>
+                            <label class="flex items-center"><input type="checkbox" name="avoidAllDairy" class="mr-2 dairy-exclusive">Avoid all dairy</label>
                         </div>
                     </div>
                     <div>
                         <h3 class="font-semibold mb-2">3. Allergies or Dietary Needs</h3>
                         <div class="space-y-1 ml-2">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Dairy</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Eggs</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Gluten</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Other: <input type="text" class="ml-2 border rounded px-2 py-1 w-40" placeholder="(specify)"></label>
+                            <label class="flex items-center"><input type="checkbox" name="allergyDairy" class="mr-2">Dairy</label>
+                            <label class="flex items-center"><input type="checkbox" name="allergyEggs" class="mr-2">Eggs</label>
+                            <label class="flex items-center"><input type="checkbox" name="allergyGluten" class="mr-2">Gluten</label>
+                            <label class="flex items-center"><input type="checkbox" name="allergyOther" class="mr-2">Other: <input type="text" name="allergyOtherText" class="ml-2 border rounded px-2 py-1 w-40" placeholder="(specify)"></label>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <button type="button" onclick="closeBoxModal('freshDairy')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded mr-2">Cancel</button>
-                        <button type="submit" class="bg-farm-green text-white px-4 py-2 rounded hover:bg-farm-light-green">Save Preferences</button>
+                        <button type="submit" class="bg-farm-green text-white px-4 py-2 rounded hover:bg-farm-light-green">Proceed to Checkout</button>
                     </div>
+                    <div id="error-freshDairy" class="text-red-600 text-sm mt-2 hidden"></div>
                 </form>
             </div>
         </div>
@@ -370,45 +371,47 @@
             <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
                 <button onclick="closeBoxModal('protein')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
                 <h2 class="text-2xl font-bold mb-4 flex items-center"><span class="mr-2">🥩</span> Protein Box Preferences</h2>
-                <form class="space-y-6">
+                <form class="space-y-6" id="form-protein" onsubmit="return validateProtein(event)">
                     <div>
                         <h3 class="font-semibold mb-2">1. Meat Preferences <span class="text-xs text-gray-500">(Select at least 2)</span></h3>
                         <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Chicken</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Beef</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Pork</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Lamb</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Turkey</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Fish</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Shellfish</label>
+                            <label class="flex items-center"><input type="checkbox" name="meat" value="Chicken" class="mr-2 meat-choice">Chicken</label>
+                            <label class="flex items-center"><input type="checkbox" name="meat" value="Beef" class="mr-2 meat-choice">Beef</label>
+                            <label class="flex items-center"><input type="checkbox" name="meat" value="Pork" class="mr-2 meat-choice">Pork</label>
+                            <label class="flex items-center"><input type="checkbox" name="meat" value="Lamb" class="mr-2 meat-choice">Lamb</label>
+                            <label class="flex items-center"><input type="checkbox" name="meat" value="Turkey" class="mr-2 meat-choice">Turkey</label>
+                            <label class="flex items-center"><input type="checkbox" name="meat" value="Fish" class="mr-2 meat-choice">Fish</label>
+                            <label class="flex items-center"><input type="checkbox" name="meat" value="Shellfish" class="mr-2 meat-choice">Shellfish</label>
                         </div>
+                        <div id="error-protein-meat" class="text-red-600 text-sm mt-1 hidden"></div>
                     </div>
                     <div>
                         <h3 class="font-semibold mb-2">2. Plant-Based Protein Options</h3>
                         <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Tofu</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Tempeh</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Beans/Lentils</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">None</label>
+                            <label class="flex items-center"><input type="checkbox" name="plant" value="Tofu" class="mr-2 plant-choice">Tofu</label>
+                            <label class="flex items-center"><input type="checkbox" name="plant" value="Tempeh" class="mr-2 plant-choice">Tempeh</label>
+                            <label class="flex items-center"><input type="checkbox" name="plant" value="Beans/Lentils" class="mr-2 plant-choice">Beans/Lentils</label>
+                            <label class="flex items-center"><input type="checkbox" name="plant" value="None" class="mr-2 plant-choice plant-none">None</label>
                         </div>
                     </div>
                     <div>
                         <h3 class="font-semibold mb-2">3. Avoid These Proteins</h3>
-                        <input type="text" class="border rounded px-2 py-1 w-full" placeholder="(list proteins to avoid)">
+                        <input type="text" name="avoidProteins" class="border rounded px-2 py-1 w-full" placeholder="(list proteins to avoid)">
                     </div>
                     <div>
                         <h3 class="font-semibold mb-2">4. Cooking Style <span class="text-xs text-gray-500">(optional)</span></h3>
                         <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Pre-marinated</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Plain/raw cut</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Vacuum-sealed</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">No preference</label>
+                            <label class="flex items-center"><input type="checkbox" name="cooking" value="Pre-marinated" class="mr-2 cooking-choice">Pre-marinated</label>
+                            <label class="flex items-center"><input type="checkbox" name="cooking" value="Plain/raw cut" class="mr-2 cooking-choice">Plain/raw cut</label>
+                            <label class="flex items-center"><input type="checkbox" name="cooking" value="Vacuum-sealed" class="mr-2 cooking-choice">Vacuum-sealed</label>
+                            <label class="flex items-center"><input type="checkbox" name="cooking" value="No preference" class="mr-2 cooking-choice cooking-none">No preference</label>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <button type="button" onclick="closeBoxModal('protein')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded mr-2">Cancel</button>
-                        <button type="submit" class="bg-farm-green text-white px-4 py-2 rounded hover:bg-farm-light-green">Save Preferences</button>
+                        <button type="submit" class="bg-farm-green text-white px-4 py-2 rounded hover:bg-farm-light-green">Proceed to Checkout</button>
                     </div>
+                    <div id="error-protein" class="text-red-600 text-sm mt-2 hidden"></div>
                 </form>
             </div>
         </div>
@@ -416,53 +419,56 @@
             <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
                 <button onclick="closeBoxModal('familyCombo')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
                 <h2 class="text-2xl font-bold mb-4 flex items-center"><span class="mr-2">👨‍👩‍👧‍👦</span> Family Combo Box Preferences</h2>
-                <form class="space-y-6">
+                <form class="space-y-6" id="form-familyCombo" onsubmit="return validateFamilyCombo(event)">
                     <div>
                         <h3 class="font-semibold mb-2">1. Household Size</h3>
                         <div class="space-y-1 ml-2">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">1–2 people</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">3–4 people</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">5+</label>
+                            <label class="flex items-center"><input type="radio" name="householdSize" value="1-2" class="mr-2">1–2 people</label>
+                            <label class="flex items-center"><input type="radio" name="householdSize" value="3-4" class="mr-2">3–4 people</label>
+                            <label class="flex items-center"><input type="radio" name="householdSize" value="5+" class="mr-2">5+</label>
                         </div>
                     </div>
                     <div>
                         <h3 class="font-semibold mb-2">2. Preferred Produce Mix</h3>
                         <div class="space-y-1 ml-2">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">More fruits</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">More vegetables</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Balanced mix</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Avoid: <input type="text" class="ml-2 border rounded px-2 py-1 w-40" placeholder="(list items)"></label>
+                            <label class="flex items-center"><input type="checkbox" name="produceMix" value="More fruits" class="mr-2 produce-choice">More fruits</label>
+                            <label class="flex items-center"><input type="checkbox" name="produceMix" value="More vegetables" class="mr-2 produce-choice">More vegetables</label>
+                            <label class="flex items-center"><input type="checkbox" name="produceMix" value="Balanced mix" class="mr-2 produce-choice">Balanced mix</label>
+                            <label class="flex items-center"><input type="checkbox" name="produceMix" value="Surprise me" class="mr-2 produce-choice produce-surprise">Surprise me</label>
+                            <label class="flex items-center"><input type="checkbox" name="produceMixAvoid" class="mr-2">Avoid: <input type="text" name="produceMixAvoidText" class="ml-2 border rounded px-2 py-1 w-40" placeholder="(list items)"></label>
                         </div>
                     </div>
                     <div>
                         <h3 class="font-semibold mb-2">3. Protein Preferences <span class="text-xs text-gray-500">(Choose 2)</span></h3>
                         <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Chicken</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Beef</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Pork</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Lamb</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Turkey</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Fish</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Plant-based</label>
+                            <label class="flex items-center"><input type="checkbox" name="familyProtein" value="Chicken" class="mr-2 family-protein-choice">Chicken</label>
+                            <label class="flex items-center"><input type="checkbox" name="familyProtein" value="Beef" class="mr-2 family-protein-choice">Beef</label>
+                            <label class="flex items-center"><input type="checkbox" name="familyProtein" value="Pork" class="mr-2 family-protein-choice">Pork</label>
+                            <label class="flex items-center"><input type="checkbox" name="familyProtein" value="Lamb" class="mr-2 family-protein-choice">Lamb</label>
+                            <label class="flex items-center"><input type="checkbox" name="familyProtein" value="Turkey" class="mr-2 family-protein-choice">Turkey</label>
+                            <label class="flex items-center"><input type="checkbox" name="familyProtein" value="Fish" class="mr-2 family-protein-choice">Fish</label>
+                            <label class="flex items-center"><input type="checkbox" name="familyProtein" value="Plant-based" class="mr-2 family-protein-choice">Plant-based</label>
                         </div>
+                        <div id="error-family-protein" class="text-red-600 text-sm mt-1 hidden"></div>
                     </div>
                     <div>
                         <h3 class="font-semibold mb-2">4. Pantry Item Preferences</h3>
                         <div class="space-y-1 ml-2 grid grid-cols-2 gap-x-4">
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Flour</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Grains</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Honey/Jam</label>
-                            <label class="flex items-center"><input type="checkbox" class="mr-2">Surprise me</label>
+                            <label class="flex items-center"><input type="checkbox" name="pantry" value="Flour" class="mr-2 pantry-choice">Flour</label>
+                            <label class="flex items-center"><input type="checkbox" name="pantry" value="Grains" class="mr-2 pantry-choice">Grains</label>
+                            <label class="flex items-center"><input type="checkbox" name="pantry" value="Honey/Jam" class="mr-2 pantry-choice">Honey/Jam</label>
+                            <label class="flex items-center"><input type="checkbox" name="pantry" value="Surprise me" class="mr-2 pantry-choice pantry-surprise">Surprise me</label>
                         </div>
                     </div>
                     <div>
                         <h3 class="font-semibold mb-2">5. Any food allergies or restrictions?</h3>
-                        <input type="text" class="border rounded px-2 py-1 w-full" placeholder="(list allergies or restrictions)">
+                        <input type="text" name="familyAllergies" class="border rounded px-2 py-1 w-full" placeholder="(list allergies or restrictions)">
                     </div>
                     <div class="flex justify-end">
                         <button type="button" onclick="closeBoxModal('familyCombo')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded mr-2">Cancel</button>
-                        <button type="submit" class="bg-farm-green text-white px-4 py-2 rounded hover:bg-farm-light-green">Save Preferences</button>
+                        <button type="submit" class="bg-farm-green text-white px-4 py-2 rounded hover:bg-farm-light-green">Proceed to Checkout</button>
                     </div>
+                    <div id="error-familyCombo" class="text-red-600 text-sm mt-2 hidden"></div>
                 </form>
             </div>
         </div>
@@ -848,7 +854,7 @@
                                     <span class="text-sm text-gray-600">Saint John, New Brunswick</span>
                                 </li>
                                 <li class="flex items-center">
-                                    <span class="text-gray-400 mr-2">⏳</span>
+                                    <span class="text-gray-400 mr-2">🚧</span>
                                     <span class="text-sm text-gray-400">Halifax and Charlottetown (Coming Soon)</span>
                                 </li>
                             </ul>
@@ -1006,5 +1012,203 @@ function closeAllBoxModals() {
 window.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeAllBoxModals();
 });
+
+// Mutually exclusive logic for "None"/"Surprise me" checkboxes
+function setupMutuallyExclusiveCheckboxes(groupSelector, noneSelector) {
+    document.querySelectorAll(groupSelector).forEach(group => {
+        group.addEventListener('change', function(e) {
+            const checkboxes = group.closest('form').querySelectorAll(groupSelector);
+            const noneBox = group.closest('form').querySelector(noneSelector);
+            if (noneBox && noneBox.checked) {
+                checkboxes.forEach(cb => { if (cb !== noneBox) { cb.checked = false; cb.disabled = true; } });
+            } else {
+                checkboxes.forEach(cb => { cb.disabled = false; });
+            }
+        });
+    });
+    document.querySelectorAll(noneSelector).forEach(noneBox => {
+        noneBox.addEventListener('change', function(e) {
+            const group = noneBox.closest('form').querySelectorAll(groupSelector);
+            if (noneBox.checked) {
+                group.forEach(cb => { if (cb !== noneBox) { cb.checked = false; cb.disabled = true; } });
+            } else {
+                group.forEach(cb => { cb.disabled = false; });
+            }
+        });
+    });
+}
+// Plant-based protein (None)
+setupMutuallyExclusiveCheckboxes('.plant-choice', '.plant-none');
+// Cooking style (No preference)
+setupMutuallyExclusiveCheckboxes('.cooking-choice', '.cooking-none');
+// Pantry (Surprise me)
+setupMutuallyExclusiveCheckboxes('.pantry-choice', '.pantry-surprise');
+// Produce mix (Surprise me)
+setupMutuallyExclusiveCheckboxes('.produce-choice', '.produce-surprise');
+// Dairy (Avoid all dairy)
+document.querySelectorAll('.dairy-exclusive').forEach(box => {
+    box.addEventListener('change', function(e) {
+        const form = box.closest('form');
+        const allDairy = form.querySelectorAll('input[type=checkbox][name^=milk], input[type=checkbox][name^=cheese], input[type=checkbox][name^=yogurt], input[type=checkbox][name^=lactoseFree]');
+        if (box.checked) {
+            allDairy.forEach(cb => { cb.checked = false; cb.disabled = true; });
+        } else {
+            allDairy.forEach(cb => { cb.disabled = false; });
+        }
+    });
+});
+
+// Validation for Protein Box (exactly 2 meats, at least 1 plant-based)
+function validateProtein(e) {
+    e.preventDefault();
+    let valid = true;
+    const form = document.getElementById('form-protein');
+    const meatChoices = form.querySelectorAll('.meat-choice');
+    const checkedMeats = Array.from(meatChoices).filter(cb => cb.checked);
+    const errorMeat = document.getElementById('error-protein-meat');
+    if (checkedMeats.length !== 2) {
+        errorMeat.textContent = 'Please select exactly 2 meat preferences.';
+        errorMeat.classList.remove('hidden');
+        valid = false;
+    } else {
+        errorMeat.classList.add('hidden');
+    }
+    // Plant-based protein required
+    const plantChoices = form.querySelectorAll('.plant-choice');
+    const checkedPlants = Array.from(plantChoices).filter(cb => cb.checked);
+    let errorPlant = document.getElementById('error-protein-plant');
+    if (!errorPlant) {
+        errorPlant = document.createElement('div');
+        errorPlant.id = 'error-protein-plant';
+        errorPlant.className = 'text-red-600 text-sm mt-1';
+        plantChoices[0].parentElement.parentElement.appendChild(errorPlant);
+    }
+    if (checkedPlants.length === 0) {
+        errorPlant.textContent = 'Please select at least 1 plant-based protein option.';
+        errorPlant.classList.remove('hidden');
+        valid = false;
+    } else {
+        errorPlant.classList.add('hidden');
+    }
+    if (!valid) return false;
+    closeBoxModal('protein');
+    alert('Preferences saved! (Demo only)');
+    return false;
+}
+// Validation for Family Combo (exactly 2 proteins, household size required, produce mix at least 1)
+function validateFamilyCombo(e) {
+    e.preventDefault();
+    let valid = true;
+    const form = document.getElementById('form-familyCombo');
+    const proteinChoices = form.querySelectorAll('.family-protein-choice');
+    const checkedProteins = Array.from(proteinChoices).filter(cb => cb.checked);
+    const errorProtein = document.getElementById('error-family-protein');
+    if (checkedProteins.length !== 2) {
+        errorProtein.textContent = 'Please select exactly 2 protein preferences.';
+        errorProtein.classList.remove('hidden');
+        valid = false;
+    } else {
+        errorProtein.classList.add('hidden');
+    }
+    // Household size required
+    const householdRadios = form.querySelectorAll('input[type=radio][name=householdSize]');
+    const checkedHousehold = Array.from(householdRadios).some(r => r.checked);
+    let errorHousehold = document.getElementById('error-family-household');
+    if (!errorHousehold) {
+        errorHousehold = document.createElement('div');
+        errorHousehold.id = 'error-family-household';
+        errorHousehold.className = 'text-red-600 text-sm mt-1';
+        householdRadios[0].parentElement.parentElement.appendChild(errorHousehold);
+    }
+    if (!checkedHousehold) {
+        errorHousehold.textContent = 'Please select a household size.';
+        errorHousehold.classList.remove('hidden');
+        valid = false;
+    } else {
+        errorHousehold.classList.add('hidden');
+    }
+    // Produce mix required
+    const produceChoices = form.querySelectorAll('.produce-choice');
+    const checkedProduce = Array.from(produceChoices).filter(cb => cb.checked);
+    let errorProduce = document.getElementById('error-family-produce');
+    if (!errorProduce) {
+        errorProduce = document.createElement('div');
+        errorProduce.id = 'error-family-produce';
+        errorProduce.className = 'text-red-600 text-sm mt-1';
+        produceChoices[0].parentElement.parentElement.appendChild(errorProduce);
+    }
+    if (checkedProduce.length === 0) {
+        errorProduce.textContent = 'Please select at least 1 preferred produce mix.';
+        errorProduce.classList.remove('hidden');
+        valid = false;
+    } else {
+        errorProduce.classList.add('hidden');
+    }
+    // Pantry item required
+    const pantryChoices = form.querySelectorAll('.pantry-choice');
+    const checkedPantry = Array.from(pantryChoices).filter(cb => cb.checked);
+    let errorPantry = document.getElementById('error-family-pantry');
+    if (!errorPantry) {
+        errorPantry = document.createElement('div');
+        errorPantry.id = 'error-family-pantry';
+        errorPantry.className = 'text-red-600 text-sm mt-1';
+        pantryChoices[0].parentElement.parentElement.appendChild(errorPantry);
+    }
+    if (checkedPantry.length === 0) {
+        errorPantry.textContent = 'Please select at least 1 pantry item preference.';
+        errorPantry.classList.remove('hidden');
+        valid = false;
+    } else {
+        errorPantry.classList.add('hidden');
+    }
+    if (!valid) return false;
+    closeBoxModal('familyCombo');
+    alert('Preferences saved! (Demo only)');
+    return false;
+}
+// Validation for Fresh & Dairy (all sections required except allergies)
+function validateFreshDairy(e) {
+    e.preventDefault();
+    let valid = true;
+    const form = document.getElementById('form-freshDairy');
+    // Produce Preferences required
+    const produceChecks = [form.leafy, form.root, form.fruits, form.avoidProduce];
+    const checkedProduce = produceChecks.some(cb => cb && cb.checked);
+    let errorProduce = document.getElementById('error-fresh-produce');
+    if (!errorProduce) {
+        errorProduce = document.createElement('div');
+        errorProduce.id = 'error-fresh-produce';
+        errorProduce.className = 'text-red-600 text-sm mt-1';
+        produceChecks[0].parentElement.parentElement.appendChild(errorProduce);
+    }
+    if (!checkedProduce) {
+        errorProduce.textContent = 'Please select at least 1 produce preference.';
+        errorProduce.classList.remove('hidden');
+        valid = false;
+    } else {
+        errorProduce.classList.add('hidden');
+    }
+    // Dairy Preferences required
+    const dairyChecks = [form.milk, form.cheese, form.yogurt, form.lactoseFree, form.avoidAllDairy];
+    const checkedDairy = dairyChecks.some(cb => cb && cb.checked);
+    let errorDairy = document.getElementById('error-fresh-dairy');
+    if (!errorDairy) {
+        errorDairy = document.createElement('div');
+        errorDairy.id = 'error-fresh-dairy';
+        errorDairy.className = 'text-red-600 text-sm mt-1';
+        dairyChecks[0].parentElement.parentElement.appendChild(errorDairy);
+    }
+    if (!checkedDairy) {
+        errorDairy.textContent = 'Please select at least 1 dairy preference.';
+        errorDairy.classList.remove('hidden');
+        valid = false;
+    } else {
+        errorDairy.classList.add('hidden');
+    }
+    if (!valid) return false;
+    closeBoxModal('freshDairy');
+    alert('Preferences saved! (Demo only)');
+    return false;
+}
 </script>
 </html> 
