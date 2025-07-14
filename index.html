@@ -254,75 +254,72 @@
                     <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Choose Your Perfect Box</h2>
                     <p class="mt-4 text-lg text-gray-600">Locally-sourced, customizable subscription boxes delivered bi-weekly</p>
                 </div>
-                <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                    <!-- Fresh Box -->
-                    <div class="group relative bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                        <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center mb-4">
-                            <span class="text-white text-4xl">🥬</span>
+                <div class="mt-12 flex justify-center">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
+                        <!-- Fresh & Dairy Box -->
+                        <div class="group relative bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow flex flex-col min-h-[540px]">
+                            <div>
+                                <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center mb-4">
+                                    <span class="text-white text-4xl">🥬</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Fresh & Dairy Box</h3>
+                                <p class="mt-2 text-2xl font-bold text-farm-green">$65</p>
+                                <p class="mt-1 text-sm text-gray-500">8–10 items, 6000–7000g</p>
+                                <ul class="mt-2 mb-6 text-sm text-gray-600 list-disc list-inside space-y-1">
+                                    <li>3 leafy greens (~250g each)</li>
+                                    <li>2–3 fruits (~300g each)</li>
+                                    <li>2 root vegetables (~500g each)</li>
+                                    <li>1L milk</li>
+                                    <li>1 dozen eggs</li>
+                                    <li>1 yogurt (~500g)</li>
+                                    <li>cheese (~250g)</li>
+                                </ul>
+                            </div>
+                            <button class="mt-auto w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
+                                Choose Box
+                            </button>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-900">Fresh Box</h3>
-                        <p class="mt-2 text-2xl font-bold text-farm-green">$35 CAD</p>
-                        <p class="mt-1 text-sm text-gray-500">6 items, 4-5kg</p>
-                        <p class="mt-2 text-sm text-gray-600">Leafy greens, root vegetables, fruits, herbs</p>
-                        <button class="mt-4 w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
-                            Choose Box
-                        </button>
-                    </div>
 
-                    <!-- Protein Box -->
-                    <div class="group relative bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                        <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center mb-4">
-                            <span class="text-white text-4xl">🥩</span>
+                        <!-- Protein Box -->
+                        <div class="group relative bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow flex flex-col min-h-[540px]">
+                            <div>
+                                <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center mb-4">
+                                    <span class="text-white text-4xl">🥩</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Protein Box</h3>
+                                <p class="mt-2 text-2xl font-bold text-farm-green">$55</p>
+                                <p class="mt-1 text-sm text-gray-500">4–5 items, 3500–4500g</p>
+                                <ul class="mt-2 mb-6 text-sm text-gray-600 list-disc list-inside space-y-1">
+                                    <li>2 meats (e.g., chicken, beef, pork)</li>
+                                    <li>1 fish portion (~1kg total)</li>
+                                    <li>1 plant-based protein (e.g., tofu, legumes)</li>
+                                </ul>
+                            </div>
+                            <button class="mt-auto w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
+                                Choose Box
+                            </button>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-900">Protein Box</h3>
-                        <p class="mt-2 text-2xl font-bold text-farm-green">$55 CAD</p>
-                        <p class="mt-1 text-sm text-gray-500">3-4 items, 3-4kg</p>
-                        <p class="mt-2 text-sm text-gray-600">Local meats, fish, plant proteins</p>
-                        <button class="mt-4 w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
-                            Choose Box
-                        </button>
-                    </div>
 
-                    <!-- Dairy Box -->
-                    <div class="group relative bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                        <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center mb-4">
-                            <span class="text-white text-4xl">🧀</span>
+                        <!-- Family Combo Box -->
+                        <div class="group relative bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow flex flex-col min-h-[540px]">
+                            <div>
+                                <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center mb-4">
+                                    <span class="text-white text-4xl">👨‍👩‍👧‍👦</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-gray-900">Family Combo Box</h3>
+                                <p class="mt-2 text-2xl font-bold text-farm-green">$70</p>
+                                <p class="mt-1 text-sm text-gray-500">10–12 items, 7000–8000g</p>
+                                <ul class="mt-2 mb-6 text-sm text-gray-600 list-disc list-inside space-y-1">
+                                    <li>3kg seasonal produce</li>
+                                    <li>2 protein options (~1kg each)</li>
+                                    <li>1L milk</li>
+                                    <li>1 pantry item (e.g., flour, grains, honey)</li>
+                                </ul>
+                            </div>
+                            <button class="mt-auto w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
+                                Choose Box
+                            </button>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-900">Dairy Box</h3>
-                        <p class="mt-2 text-2xl font-bold text-farm-green">$30 CAD</p>
-                        <p class="mt-1 text-sm text-gray-500">3-4 items, 3-4kg</p>
-                        <p class="mt-2 text-sm text-gray-600">Milk, eggs, cheese, yogurt from local farms</p>
-                        <button class="mt-4 w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
-                            Choose Box
-                        </button>
-                    </div>
-
-                    <!-- Family Combo Box -->
-                    <div class="group relative bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                        <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center mb-4">
-                            <span class="text-white text-4xl">👨‍👩‍👧‍👦</span>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900">Family Combo Box</h3>
-                        <p class="mt-2 text-2xl font-bold text-farm-green">$60 CAD</p>
-                        <p class="mt-1 text-sm text-gray-500">10-12 items, 6-7kg</p>
-                        <p class="mt-2 text-sm text-gray-600">Balanced mix perfect for families</p>
-                        <button class="mt-4 w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
-                            Choose Box
-                        </button>
-                    </div>
-
-                    <!-- Pantry Box -->
-                    <div class="group relative bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-                        <div class="aspect-square w-full rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-4">
-                            <span class="text-white text-4xl">🍯</span>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900">Pantry Box</h3>
-                        <p class="mt-2 text-2xl font-bold text-farm-green">$25 CAD</p>
-                        <p class="mt-1 text-sm text-gray-500">3-4 items, 2-3kg</p>
-                        <p class="mt-2 text-sm text-gray-600">Bread, honey, jams, grains, flour</p>
-                        <button class="mt-4 w-full bg-farm-green text-white px-4 py-3 rounded-md hover:bg-farm-light-green transition-colors min-h-[44px] flex items-center justify-center">
-                            Choose Box
-                        </button>
                     </div>
                 </div>
             </div>
