@@ -138,7 +138,9 @@
             <div class="flex h-16 justify-between items-center">
                 <div class="flex items-center">
                     <div class="shrink-0">
-                        <button onclick="showPage('home')" class="text-2xl font-bold text-farm-green hover:text-farm-light-green transition-colors">🧺 The Farm Basket</button>
+                        <button onclick="showPage('home')" class="flex items-center focus:outline-none">
+                            <img src="images/logo.png" alt="The Farm Basket Logo" class="h-16 w-[114px] object-contain" />
+                        </button>
                     </div>
                 </div>
                 <div class="hidden md:block">
@@ -353,7 +355,7 @@
         </section>
 
         <!-- Box Preference Modals -->
-        <div id="modal-freshDairy" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+        <div id="modal-freshDairy" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden overflow-auto">
             <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
                 <button onclick="closeBoxModal('freshDairy')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
                 <h2 class="text-2xl font-bold mb-4 flex items-center"><span class="mr-2">🥬</span> Fresh & Dairy Box Preferences</h2>
@@ -394,7 +396,7 @@
                 </form>
             </div>
         </div>
-        <div id="modal-protein" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+        <div id="modal-protein" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden overflow-auto">
             <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
                 <button onclick="closeBoxModal('protein')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
                 <h2 class="text-2xl font-bold mb-4 flex items-center"><span class="mr-2">🥩</span> Protein Box Preferences</h2>
@@ -442,7 +444,7 @@
                 </form>
             </div>
         </div>
-        <div id="modal-familyCombo" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+        <div id="modal-familyCombo" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden overflow-auto">
             <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
                 <button onclick="closeBoxModal('familyCombo')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
                 <h2 class="text-2xl font-bold mb-4 flex items-center"><span class="mr-2">👨‍👩‍👧‍👦</span> Family Combo Box Preferences</h2>
