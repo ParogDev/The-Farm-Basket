@@ -781,7 +781,7 @@
                 <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
                     <li>
                         <div class="flex items-center justify-center w-full">
-                            <img id="xuerong-img" src="images/team/xuerong.png" alt="Xuerong Zhao" class="h-24 w-24 rounded-full object-cover border-2 border-farm-green shadow cursor-pointer" />
+                            <img id="xuerong-img" src="images/team/xuerong.png" alt="Xuerong Zhao" class="h-24 w-24 rounded-full object-cover border-2 border-farm-green shadow" />
                         </div>
                         <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900 text-center">Xuerong Zhao</h3>
                         <p class="text-sm/6 text-farm-green text-center">Chief Executive Officer (CEO)</p>
@@ -812,7 +812,7 @@
                         <p class="mt-4 text-base/7 text-gray-600 text-center">Zakariya is a seasoned media and content strategist with over nine years of experience at Africa Magic Channels. Now pursuing his MBA at UNB, he leads brand storytelling, community engagement, and marketing innovation at The Farm Basket.</p>
                     </li>
                     <!-- Funky the Golden Retriever (hidden by default) -->
-                    <li id="funky-card" style="display:none;">
+                    <li id="funky-card" style="display:none; opacity:1; transition: opacity 5s;">
                         <div class="flex items-center justify-center w-full">
                             <img src="images/team/funky.png" alt="Funky the Golden Retriever" class="h-24 w-24 rounded-full object-cover border-2 border-yellow-400 shadow" />
                         </div>
@@ -1249,6 +1249,8 @@ function validateFreshDairy(e) {
     const maxDelay = 3000; // 3 seconds to reset
     const funkyCard = document.getElementById('funky-card');
     const xuerongImg = document.getElementById('xuerong-img');
+    let fadeTimeout = null;
+    let hideTimeout = null;
     // Reset if another team member is clicked
     document.querySelectorAll('#page-team ul[role=list] img').forEach(img => {
         if (img !== xuerongImg) {
@@ -1257,6 +1259,25 @@ function validateFreshDairy(e) {
             });
         }
     });
+    function showFunkyCard() {
+        if (funkyCard) {
+            // Reset fade if already running
+            clearTimeout(fadeTimeout);
+            clearTimeout(hideTimeout);
+            funkyCard.style.display = '';
+            funkyCard.style.opacity = '1';
+            funkyCard.scrollIntoView({behavior: 'smooth', block: 'center'});
+            // Start fade after 10s
+            fadeTimeout = setTimeout(() => {
+                funkyCard.style.opacity = '0';
+                // Hide after 5s fade
+                hideTimeout = setTimeout(() => {
+                    funkyCard.style.display = 'none';
+                    funkyCard.style.opacity = '1'; // Reset for next reveal
+                }, 5000);
+            }, 10000);
+        }
+    }
     if (xuerongImg) {
         xuerongImg.addEventListener('click', function() {
             const now = Date.now();
@@ -1266,10 +1287,7 @@ function validateFreshDairy(e) {
             lastClickTime = now;
             clickCount++;
             if (clickCount === 10) {
-                if (funkyCard) {
-                    funkyCard.style.display = '';
-                    funkyCard.scrollIntoView({behavior: 'smooth', block: 'center'});
-                }
+                showFunkyCard();
                 clickCount = 0;
             }
         });
