@@ -781,7 +781,7 @@
                 <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
                     <li>
                         <div class="flex items-center justify-center w-full">
-                            <img src="images/team/xuerong.png" alt="Xuerong Zhao" class="h-24 w-24 rounded-full object-cover border-2 border-farm-green shadow" />
+                            <img id="xuerong-img" src="images/team/xuerong.png" alt="Xuerong Zhao" class="h-24 w-24 rounded-full object-cover border-2 border-farm-green shadow cursor-pointer" />
                         </div>
                         <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900 text-center">Xuerong Zhao</h3>
                         <p class="text-sm/6 text-farm-green text-center">Chief Executive Officer (CEO)</p>
@@ -810,6 +810,15 @@
                         <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900 text-center">Zakariya Mohammed</h3>
                         <p class="text-sm/6 text-farm-green text-center">Chief Marketing Officer (CMO)</p>
                         <p class="mt-4 text-base/7 text-gray-600 text-center">Zakariya is a seasoned media and content strategist with over nine years of experience at Africa Magic Channels. Now pursuing his MBA at UNB, he leads brand storytelling, community engagement, and marketing innovation at The Farm Basket.</p>
+                    </li>
+                    <!-- Funky the Golden Retriever (hidden by default) -->
+                    <li id="funky-card" style="display:none;">
+                        <div class="flex items-center justify-center w-full">
+                            <img src="images/team/funky.png" alt="Funky the Golden Retriever" class="h-24 w-24 rounded-full object-cover border-2 border-yellow-400 shadow" />
+                        </div>
+                        <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900 text-center">Funky</h3>
+                        <p class="text-sm/6 text-farm-green text-center">Chief Happiness Officer (CHO)</p>
+                        <p class="mt-4 text-base/7 text-gray-600 text-center">Funky is Xuerong's golden retriever and the team's official morale booster. He specializes in tail wags, positive vibes, and ensuring every day at The Farm Basket is pawsitive. When he's not napping, he's hard at work inspiring smiles and keeping spirits high!</p>
                     </li>
                 </ul>
             </div>
@@ -1232,5 +1241,39 @@ function validateFreshDairy(e) {
     alert('Preferences saved! (Demo only)');
     return false;
 }
+
+// Easter egg: Reveal Funky after 10 clicks on Xuerong's image
+(function() {
+    let clickCount = 0;
+    let lastClickTime = 0;
+    const maxDelay = 3000; // 3 seconds to reset
+    const funkyCard = document.getElementById('funky-card');
+    const xuerongImg = document.getElementById('xuerong-img');
+    // Reset if another team member is clicked
+    document.querySelectorAll('#page-team ul[role=list] img').forEach(img => {
+        if (img !== xuerongImg) {
+            img.addEventListener('click', () => {
+                clickCount = 0;
+            });
+        }
+    });
+    if (xuerongImg) {
+        xuerongImg.addEventListener('click', function() {
+            const now = Date.now();
+            if (now - lastClickTime > maxDelay) {
+                clickCount = 0;
+            }
+            lastClickTime = now;
+            clickCount++;
+            if (clickCount === 10) {
+                if (funkyCard) {
+                    funkyCard.style.display = '';
+                    funkyCard.scrollIntoView({behavior: 'smooth', block: 'center'});
+                }
+                clickCount = 0;
+            }
+        });
+    }
+})();
 </script>
 </html> 
